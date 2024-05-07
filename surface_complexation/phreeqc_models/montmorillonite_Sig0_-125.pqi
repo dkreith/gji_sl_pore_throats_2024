@@ -1,0 +1,195 @@
+DATABASE C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\phreeqc.dat
+PITZER
+-MacInnes true
+
+SELECTED_OUTPUT
+-file # enter output path here
+-molalities Na+ Cl- H+ OH- 
+-reset false
+
+USER_PUNCH
+-headings zeta Sig0 SigS fQ    
+-start
+2  Nav = 6.022e23
+30 punch EDL("Psi2", "Smectite")
+40 punch EDL("Sigma", "Smectite")
+50 punch EDL("Sigma1", "Smectite")
+60 punch -EDL("Sigma1", "Smectite")/EDL("Sigma", "Smectite")
+-end
+
+PHASES
+Fix_pH
+H+ = H+
+log_k 0
+
+
+
+SURFACE_MASTER_SPECIES
+
+Smectite_ Smectite_X-
+
+SURFACE_SPECIES
+
+Smectite_X-= Smectite_X-
+log_k 0
+-cd_music  0 0 0
+
+Smectite_X-+Na+ = Smectite_XNa
+log_k 0.88
+-cd_music  0 1 0
+
+INCREMENTAL_REACTIONS True
+
+SOLUTION 1
+units mol/L
+Na 0.001
+Cl 0.001 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END
+
+SOLUTION 1
+units mol/L
+Na 0.00215443
+Cl 0.00215443 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END
+
+SOLUTION 1
+units mol/L
+Na 0.00464159
+Cl 0.00464159 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END
+
+SOLUTION 1
+units mol/L
+Na 0.01
+Cl 0.01 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END
+
+SOLUTION 1
+units mol/L
+Na 0.02154435
+Cl 0.02154435 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END
+
+SOLUTION 1
+units mol/L
+Na 0.04641589
+Cl 0.04641589 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END
+
+SOLUTION 1
+units mol/L
+Na 0.1
+Cl 0.1 charge
+temp 20.0
+pH 6.5
+
+SURFACE 1
+-equil 1
+-cd_music
+Smectite_ 0.0010363375 800  1
+-capacitance 0.71 1000
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 HCl
+END

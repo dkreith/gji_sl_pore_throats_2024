@@ -1,0 +1,105 @@
+DATABASE C:\Program Files (x86)\USGS\Phreeqc Interactive 3.7.3-15968\database\phreeqc.dat
+SELECTED_OUTPUT
+-file # enter output path here
+-reset false
+-molalities Na+ Cl- H+ OH-
+ 
+USER_PUNCH
+-headings pH zeta Sig0 SigS fQ
+
+-start
+20 punch -la("H+")
+30 punch EDL("Psi2", "Quartza")
+60 punch EDL("Sigma", "Quartza")
+70 punch EDL("Sigma1", "Quartza")
+80 punch -EDL("Sigma1", "Quartza")/EDL("Sigma", "Quartza")
+-end
+ 
+PHASES
+Fix_pH
+H+ = H+
+log_k 0
+ 
+SURFACE_MASTER_SPECIES
+ 
+Quartza_ Quartza_O-
+ 
+SURFACE_SPECIES
+ 
+Quartza_O-= Quartza_O-
+log_k 0
+-cd_music  0 0 0
+ 
+Quartza_O-+ H+ = Quartza_OH
+log_k 7.28
+-cd_music  1 0 0
+
+Quartza_O-+ Na+ = Quartza_ONa
+log_k 0.58
+-cd_music  0 1 0
+ 
+INCREMENTAL_REACTIONS True
+ 
+SOLUTION 1
+Na 10
+Cl 10 charge
+temp 20.0
+pH 5
+ 
+SURFACE 1
+-equil 1
+-cd_music
+Quartza_ 0.000328462 43 1
+-capacitance 3.43 1000
+ 
+SAVE SOLUTION 1
+SAVE SURFACE 1
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -5.5 NaOH
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6 NaOH
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -6.5 NaOH
+END
+ 
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -7 NaOH
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -7.5 NaOH
+END
+ 
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -8 NaOH
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -8.5 NaOH
+END
+
+USE SOLUTION 1
+USE SURFACE 1
+EQUILIBRIUM_PHASES 1
+Fix_pH -9 NaOH
+END
